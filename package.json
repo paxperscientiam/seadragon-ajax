@@ -1,7 +1,10 @@
 {
-  "name": "@paxperscientiam/seadragon-ajax",
-  "version": "0.9.0",
-  "repository": "https://github.com/paxperscientiam/seadragon-ajax",
-  "author": "aseemk",
-  "license": "See license in license.txt"
+    "name": "@paxperscientiam/seadragon-ajax",
+    "version": "0.9.0",
+    "repository": "https://github.com/paxperscientiam/seadragon-ajax",
+    "author": "aseemk",
+    "license": "See license in license.txt",
+    "scripts": {
+        "build": "bash build/build.sh"
+    }
 }
