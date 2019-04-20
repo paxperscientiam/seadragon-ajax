@@ -1,0 +1,8 @@
+{
+  "name": "seadragon-ajax",
+  "version": "",
+  "main": "index.js",
+  "repository": "https://github.com/paxperscientiam/seadragon-ajax",
+  "author": "aseemk",
+  "license": "license.txt"
+}
