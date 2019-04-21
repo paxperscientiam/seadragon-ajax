@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+
+outname="${1?}"
+
+
 declare -a files=(
     "_intro.txt"
     "Seadragon.Core.js"
@@ -30,4 +34,8 @@ files=( "${files[@]/#/src\/}" )
 
 test ! -e dist && mkdir dist
 
-cat "${files[@]}" | uglifyjs --compress --mangle -- >| "dist/seadragon.min.js"
+if [[ $2 = '--pro' ]]; then
+    cat "${files[@]}" | uglifyjs --compress --mangle -- >| "dist/${outname}"
+else
+    cat "${files[@]}" >| "dist/${outname}"
+fi

@@ -5,6 +5,7 @@
     "author": "aseemk",
     "license": "See license in license.txt",
     "scripts": {
-        "build": "bash build/build.sh"
+        "build": "bash build/build.sh seadragon.js",
+        "build:pro": "bash build/build.sh seadragon.min.js --pro"
     }
 }
