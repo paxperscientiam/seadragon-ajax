@@ -10,7 +10,7 @@
         "build:pro": "bash build/build.sh seadragon.min.js --pro",
         "fuse": "ts-node -T fuse.ts",
         "lint": "tslint src/app.ts",
-        "test": "tsc -w"
+        "test": "tsc -w src/app.ts"
     },
     "devDependencies": {
         "@types/node": "^11.13.6",

@@ -8,7 +8,7 @@ export class Utils {
 
   public const self = this;
 
-    public const browsers = {
+    public browsers = {
         UNKNOWN: 0,
         IE: 1,
         FIREFOX: 2,
@@ -18,8 +18,8 @@ export class Utils {
     };
 
 
-    public const arrActiveX = ["Msxml2.XMLHTTP", "Msxml3.XMLHTTP", "Microsoft.XMLHTTP"];
-    public const supportedImageFormats = {
+    public arrActiveX = ["Msxml2.XMLHTTP", "Msxml3.XMLHTTP", "Microsoft.XMLHTTP"];
+    public supportedImageFormats = {
         "bmp": false,
         "jpeg": true,
         "jpg": true,
@@ -28,8 +28,8 @@ export class Utils {
         "wdp": false,
     };
 
-    public const browser: string
-    public const browserVersion: string
+    public browser: number
+    public browserVersion: string
 
     constructor() {
         this.browser = this.browsers.UNKNOWN;
@@ -227,7 +227,7 @@ export class Utils {
         return delta ? delta / Math.abs(delta) : 0;
     };
 
-    this.getPageScroll = function() {
+    getPageScroll() {
         var result = new SeadragonPoint();
         var docElmt = document.documentElement || {};
         var body = document.body || {};
@@ -257,7 +257,7 @@ export class Utils {
         return result;
     };
 
-    this.getWindowSize = function() {
+    getWindowSize() {
         var result = new SeadragonPoint();
         var docElmt = document.documentElement || {};
         var body = document.body || {};
@@ -289,12 +289,12 @@ export class Utils {
         return result;
     };
 
-    this.imageFormatSupported = function(ext) {
+    imageFormatSupported(ext) {
         var ext = ext ? ext : "";
         return !!supportedImageFormats[ext.toLowerCase()];
     };
 
-    this.makeCenteredNode = function(elmt) {
+    makeCenteredNode(elmt) {
         var elmt = SeadragonUtils.getElement(elmt);
         var div = self.makeNeutralElement("div");
         var html = [];
@@ -329,7 +329,7 @@ export class Utils {
         return div;
     };
 
-    this.makeNeutralElement = function(tagName) {
+    makeNeutralElement(tagName) {
         var elmt = document.createElement(tagName);
         var style = elmt.style;
 
@@ -343,7 +343,7 @@ export class Utils {
         return elmt;
     };
 
-    this.makeTransparentImage = function(src) {
+    makeTransparentImage(src) {
         var img = self.makeNeutralElement("img");
         var elmt = null;
 
@@ -373,7 +373,7 @@ export class Utils {
         return elmt;
     };
 
-    this.setElementOpacity = function(elmt, opacity, usesAlpha) {
+    setElementOpacity(elmt, opacity, usesAlpha) {
         var elmt = self.getElement(elmt);
 
         if (usesAlpha && badAlphaBrowser) {
@@ -420,7 +420,7 @@ export class Utils {
         //}
     };
 
-    this.addEvent = function(elmt, eventName, handler, useCapture) {
+    addEvent(elmt, eventName, handler, useCapture) {
         var elmt = self.getElement(elmt);
 
         // technique from:
@@ -443,7 +443,7 @@ export class Utils {
         }
     };
 
-    this.removeEvent = function(elmt, eventName, handler, useCapture) {
+    removeEvent(elmt, eventName, handler, useCapture) {
         var elmt = self.getElement(elmt);
 
         // technique from:
@@ -466,7 +466,7 @@ export class Utils {
         }
     };
 
-    this.cancelEvent = function(event) {
+    cancelEvent(event) {
         var event = self.getEvent(event);
 
         // technique from:
@@ -480,7 +480,7 @@ export class Utils {
         event.returnValue = false;      // IE for preventing default
     };
 
-    this.stopEvent = function(event) {
+    stopEvent(event) {
         var event = self.getEvent(event);
 
         // technique from:
@@ -493,7 +493,7 @@ export class Utils {
         event.cancelBubble = true;      // IE for stopping propagation
     };
 
-    this.createCallback = function(object, method) {
+    createCallback(object, method) {
         // create callback args
         var initialArgs = [];
         for (var i = 2; i < arguments.length; i++) {
@@ -512,12 +512,12 @@ export class Utils {
         };
     };
 
-    this.getUrlParameter = function(key) {
+    getUrlParameter(key) {
         var value = urlParams[key];
         return value ? value : null;
     };
 
-    this.makeAjaxRequest = function(url, callback) {
+    makeAjaxRequest(url, callback) {
         var async = typeof(callback) == "function";
         var req = null;
 
@@ -577,7 +577,7 @@ export class Utils {
         return async ? null : req;
     };
 
-    this.parseXml = function(string) {
+    parseXml(string) {
         var xmlDoc = null;
 
         if (window.ActiveXObject) {
@@ -603,6 +603,3 @@ export class Utils {
     };
 
 };
-
-// Seadragon.Utils is a static class, so make it singleton instance
-SeadragonUtils = Seadragon.Utils = new SeadragonUtils();

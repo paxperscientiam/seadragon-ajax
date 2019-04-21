@@ -1,10 +1,26 @@
 //  This code is distributed under the included license agreement, also
 //  available here: http://go.microsoft.com/fwlink/?LinkId=164943
 
-export function Debug() {
-    this.log = function(msg, important) {
+export interface Console {
+    log(): void
+    error(): void
+}
+
+export interface Debug {
+    log(msg: string, important: boolean): void
+    error(msg: string, e): void
+    fail(msg: string): void
+}
+
+
+import { getConfig } from "./Seadragon.Config"
+//import { getString } from "./
+
+
+export class Debug {
+    log(msg: string, important: boolean) {
         var console = window.console || {};
-        var debug = SeadragonConfig.debugMode;
+        var debug = getConfig().debugMode;
 
         if (debug && console.log) {
             console.log(msg);
@@ -13,9 +29,9 @@ export function Debug() {
         }
     };
 
-    this.error = function(msg, e) {
+    error(msg: string, e) {
         var console = window.console || {};
-        var debug = SeadragonConfig.debugMode;
+        var debug = getConfig().debugMode;
 
         if (debug && console.error) {
             console.error(msg);
@@ -29,7 +45,7 @@ export function Debug() {
         }
     };
 
-    this.fail = function(msg) {
+    fail(msg: string) {
         alert(SeadragonStrings.getString("Errors.Failure"));
         throw new Error(msg);
     };

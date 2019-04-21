@@ -19,17 +19,17 @@ export interface Profiler {
 
 export class Profiler {
     // Fields
-    const midUpdate: boolean false
-    const lastBeginTime = null
-    const lastEndTime = null
+    public midUpdate: boolean = false
+    public lastBeginTime = null
+    public lastEndTime = null
 
-    const minUpdateTime = Infinity;
-    const avgUpdateTime: number = 0;
-    const maxUpdateTime: number = 0;
+    public minUpdateTime = Infinity
+    public avgUpdateTime: number = 0
+    public maxUpdateTime: number = 0
 
-    const minIdleTime = Infinity;
-    const avgIdleTime: number = 0;
-    const maxIdleTime: number = 0;
+    public minIdleTime = Infinity
+    public avgIdleTime: number = 0
+    public maxIdleTime: number = 0
 
 
     constructor(               ) {

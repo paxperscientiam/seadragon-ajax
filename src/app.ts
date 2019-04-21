@@ -36,24 +36,31 @@ import { Spring } from "./Seadragon.Spring"
 
 import { Utils } from "./Seadragon.Utils"
 
+import { MouseTracker } from "./Seadragon.MouseTracker"
 
-"Seadragon.Utils.js"
-    "Seadragon.MouseTracker.js"
-    "Seadragon.EventManager.js"
-    "Seadragon.ImageLoader.js"
-    "Seadragon.Buttons.js"
-    "Seadragon.TileSource.js"
-    "Seadragon.DisplayRect.js"
-    "Seadragon.DeepZoom.js"
-    "Seadragon.Viewport.js"
-    "Seadragon.Drawer.js"
-    "Seadragon.Viewer.js"
+import { EventManager } from "./Seadragon.EventManager"
 
 
 
-window.Seadragon = Seadragon
+
+import { ImageLoader } from "./Seadragon.ImageLoader"
+import { Buttons } from  "./Seadragon.Buttons"
+import { TileSource } from "./Seadragon.TileSource"
+import { DisplayRect } from "./Seadragon.DisplayRect"
+import { DeepZoom } from "./Seadragon.DeepZoom"
+import { Viewport } from "./Seadragon.Viewport"
+import { Drawer } from  "./Seadragon.Drawer"
+import { Viewer } from  "./Seadragon.Viewer"
+
+
+
+// window.Seadragon = Seadragon
 // Seadragon.Debug is a static class, so make it singleton instance
 // SeadragonDebug = Seadragon.Debug = new SeadragonDebug();
 // var SeadragonPoint = Seadragon.Point;
 // var SeadragonRect = Seadragon.Rect;
 // seadragonpsring seadrong.spring
+
+// Seadragon.Utils is a static class, so make it singleton instance
+//  SeadragonUtils = Seadragon.Utils = new SeadragonUtils();
+// var SeadragonMouseTracker = Seadragon.MouseTracker;
